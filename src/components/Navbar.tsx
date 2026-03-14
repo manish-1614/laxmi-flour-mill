@@ -5,10 +5,11 @@ import { ShoppingBasket, Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Our Process", href: "#process" },
-    { name: "Products", href: "#products" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Home", href: "#", highlight: false },
+    { name: "Our Process", href: "#process", highlight: false },
+    { name: "Products", href: "#products", highlight: false },
+    { name: "Testimonials", href: "#testimonials", highlight: false },
+    { name: "Multigrain Atta", href: "/multigrain", highlight: true },
 ];
 
 export default function Navbar() {
@@ -43,7 +44,11 @@ export default function Navbar() {
                             <li key={link.name}>
                                 <Link
                                     href={link.href}
-                                    className="text-sm font-medium text-dark-brown/70 hover:text-accent-green transition-colors uppercase tracking-widest"
+                                    className={
+                                        link.highlight
+                                            ? "text-sm font-semibold text-wheat hover:text-dark-brown transition-colors uppercase tracking-widest border-b border-wheat/50 pb-0.5"
+                                            : "text-sm font-medium text-dark-brown/70 hover:text-accent-green transition-colors uppercase tracking-widest"
+                                    }
                                 >
                                     {link.name}
                                 </Link>
@@ -73,7 +78,11 @@ export default function Navbar() {
                             <Link
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-lg font-medium text-dark-brown hover:text-accent-green block"
+                                className={
+                                    link.highlight
+                                        ? "text-lg font-bold text-wheat hover:text-dark-brown block"
+                                        : "text-lg font-medium text-dark-brown hover:text-accent-green block"
+                                }
                             >
                                 {link.name}
                             </Link>
