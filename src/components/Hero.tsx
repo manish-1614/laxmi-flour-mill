@@ -2,6 +2,7 @@
 
 import { ArrowRight, ShoppingBag } from "lucide-react";
 import Image from "next/image";
+import lfmHero from "../../public/lfm_hero.png";
 
 export default function Hero() {
     return (
@@ -65,7 +66,7 @@ export default function Hero() {
                 <div className="relative animate-scale-in">
                     <div className="relative z-10 rounded-4xl overflow-hidden shadow-premium aspect-4/3 md:aspect-auto md:h-[500px] lg:h-[600px]">
                         <Image
-                            src="/lfm_hero.png"
+                            src={lfmHero}
                             alt="Freshly ground flour and wheat grains"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-700"

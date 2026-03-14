@@ -2,6 +2,7 @@
 
 import { ArrowDown, MessageSquare } from "lucide-react";
 import Image from "next/image";
+import attaHero from "../../../public/customized_multigrain_atta_hero.png";
 
 export default function MultigrainHero() {
     return (
@@ -89,7 +90,7 @@ export default function MultigrainHero() {
                     style={{ animationDelay: "150ms" }}
                 >
                     <Image
-                        src="/customized_multigrain_atta_hero.png"
+                        src={attaHero}
                         alt="Customized Multigrain Atta Blends"
                         fill
                         className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"

@@ -3,6 +3,7 @@
 import { Package, CheckCircle2 } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import Image from "next/image";
+import essentials1 from "../../public/essentials_section_1.png";
 
 export default function GroceryCombo() {
     const leftReveal = useReveal();
@@ -17,7 +18,7 @@ export default function GroceryCombo() {
                 >
                     <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-premium aspect-4/5">
                         <Image
-                            src="/essentials_section_1.png"
+                            src={essentials1}
                             alt="Premium grocery essentials and flour bags"
                             fill
                             className="object-cover"
