@@ -55,10 +55,13 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
-                    <button className="bg-dark-brown text-white px-6 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2">
+                    <a 
+                        href="tel:+918789685206"
+                        className="bg-dark-brown text-white px-6 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2"
+                    >
                         <Phone className="w-4 h-4" />
                         Contact Us
-                    </button>
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -89,10 +92,13 @@ export default function Navbar() {
                         </li>
                     ))}
                     <hr className="border-wheat/20" />
-                    <button className="w-full bg-accent-green text-white py-4 rounded-xl flex justify-center items-center gap-2">
+                    <a 
+                        href="tel:+918789685206"
+                        className="w-full bg-accent-green text-white py-4 rounded-xl flex justify-center items-center gap-2"
+                    >
                         <Phone className="w-5 h-5" />
                         Call Now
-                    </button>
+                    </a>
                 </ul>
             </div>
         </header>

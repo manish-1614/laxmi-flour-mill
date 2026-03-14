@@ -38,7 +38,7 @@ export default function MultigrainCTA() {
                     className={`flex flex-wrap justify-center gap-6 reveal reveal-up ${buttonReveal.isVisible ? "visible" : ""}`}
                 >
                     <a
-                        href="https://wa.me/919876543210"
+                        href="https://wa.me/918789685206"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-[#25D366] text-white px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-[#128C7E] transition-all duration-300 shadow-premium group"
@@ -47,7 +47,7 @@ export default function MultigrainCTA() {
                         Order on WhatsApp
                     </a>
                     <a
-                        href="tel:+919876543210"
+                        href="tel:+918789685206"
                         className="border-2 border-dark-brown/10 text-dark-brown px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-dark-brown hover:text-white hover:border-dark-brown transition-all duration-300 group"
                     >
                         <PhoneCall className="w-6 h-6 group-hover:scale-110 transition-transform" />

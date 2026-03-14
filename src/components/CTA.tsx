@@ -31,15 +31,23 @@ export default function CTA() {
                     ref={buttonReveal.ref}
                     className={`flex flex-wrap justify-center gap-6 reveal reveal-up ${buttonReveal.isVisible ? 'visible' : ''}`}
                 >
-                    <button className="bg-[#25D366] text-white px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-[#128C7E] transition-all duration-300 shadow-premium group">
+                    <a 
+                        href="https://wa.me/918789685206"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#25D366] text-white px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-[#128C7E] transition-all duration-300 shadow-premium group"
+                    >
                         <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
                         WhatsApp Order
-                    </button>
+                    </a>
 
-                    <button className="border-2 border-white/20 text-white px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-white hover:text-dark-brown transition-all duration-300 group">
+                    <a 
+                        href="tel:+918789685206"
+                        className="border-2 border-white/20 text-white px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-white hover:text-dark-brown transition-all duration-300 group"
+                    >
                         <PhoneCall className="w-6 h-6 group-hover:scale-110 transition-transform" />
                         Call Now
-                    </button>
+                    </a>
                 </div>
 
                 <p className="text-white/40 text-xs uppercase tracking-[0.3em]">

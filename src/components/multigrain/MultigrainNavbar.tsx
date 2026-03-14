@@ -58,7 +58,7 @@ export default function MultigrainNavbar() {
                         </a>
                     ))}
                     <a
-                        href="tel:+919876543210"
+                        href="tel:+918789685206"
                         className="bg-dark-brown text-white px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2 ml-2"
                     >
                         <Phone className="w-4 h-4" />
@@ -104,7 +104,7 @@ export default function MultigrainNavbar() {
                     <hr className="border-wheat/20" />
                     <li>
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+918789685206"
                             className="w-full bg-accent-green text-white py-4 rounded-xl flex justify-center items-center gap-2"
                         >
                             <Phone className="w-5 h-5" />

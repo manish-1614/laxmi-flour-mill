@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
-
+import HealthIssuesModal from "./HealthIssuesModal";
 const benefits = [
     {
         emoji: "🩺",
@@ -48,6 +49,7 @@ const benefits = [
 ];
 
 export default function HealthBenefits() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const headerReveal = useReveal();
     const gridReveal = useReveal();
 
@@ -94,10 +96,27 @@ export default function HealthBenefits() {
                 ))}
             </div>
 
-            <p className="text-center text-[10px] text-muted/60 mt-14 uppercase tracking-widest max-w-2xl mx-auto leading-relaxed">
+            <div className="flex justify-center mt-12 mb-8">
+                <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="group relative inline-flex items-center gap-3 px-8 py-4 bg-accent-green text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-opacity-90 transition-all hover:-translate-y-1 shadow-premium hover:shadow-xl"
+                >
+                    Target Specific Health Issues
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+
+            <p className="text-center text-[10px] text-muted/60 mt-6 uppercase tracking-widest max-w-2xl mx-auto leading-relaxed">
                 Medical disclaimer: These are nutritional food products, not medicine.
                 Consult your physician before dietary changes if you have a chronic condition.
             </p>
+
+            <HealthIssuesModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+            />
         </section>
     );
 }

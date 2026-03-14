@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -25,13 +26,18 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-wrap gap-5">
-                        <button className="bg-accent-green text-white px-8 py-5 rounded-2xl shadow-premium hover:bg-dark-brown transition-all duration-300 flex items-center gap-3 group">
+                        <a 
+                            href="https://wa.me/918789685206"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-accent-green text-white px-8 py-5 rounded-2xl shadow-premium hover:bg-dark-brown transition-all duration-300 flex items-center gap-3 group"
+                        >
                             <ShoppingBag className="w-5 h-5" />
                             Order Fresh Atta
                             <div className="animate-bounce-x">
                                 <ArrowRight className="w-5 h-5" />
                             </div>
-                        </button>
+                        </a>
 
                         <button className="border-2 border-dark-brown/10 text-dark-brown px-8 py-5 rounded-2xl hover:border-dark-brown transition-colors duration-300 font-medium">
                             Visit Our Store
@@ -57,11 +63,14 @@ export default function Hero() {
                 </div>
 
                 <div className="relative animate-scale-in">
-                    <div className="relative z-10 rounded-4xl overflow-hidden shadow-premium">
-                        <img
-                            src="/hero-chakki.png"
+                    <div className="relative z-10 rounded-4xl overflow-hidden shadow-premium aspect-4/3 md:aspect-auto md:h-[500px] lg:h-[600px]">
+                        <Image
+                            src="/lfm_hero.png"
                             alt="Freshly ground flour and wheat grains"
-                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-700"
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-linear-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
                     </div>

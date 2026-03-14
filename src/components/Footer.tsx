@@ -46,15 +46,15 @@ export default function Footer() {
                     <ul className="space-y-6">
                         <li className="flex gap-4 items-start">
                             <MapPin className="w-5 h-5 text-accent-green shrink-0" />
-                            <p className="text-sm text-muted">123 Chakki Street, Artisan Nagar,<br />State, 123456</p>
+                            <p className="text-sm text-muted">Kadru Kumhar Toli, Ranchi, 834002</p>
                         </li>
                         <li className="flex gap-4 items-center">
                             <Phone className="w-5 h-5 text-accent-green shrink-0" />
-                            <p className="text-sm text-muted">+91 98765 43210</p>
+                            <p className="text-sm text-muted">+91 8789685206</p>
                         </li>
                         <li className="flex gap-4 items-center">
                             <Mail className="w-5 h-5 text-accent-green shrink-0" />
-                            <p className="text-sm text-muted">hello@laxmiflourmill.com</p>
+                            <p className="text-sm text-muted">mkprajapati@zohomail.in</p>
                         </li>
                     </ul>
                 </div>
@@ -62,7 +62,7 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-wheat/10 flex flex-col md:row justify-between items-center gap-6">
                 <p className="text-[10px] text-muted uppercase tracking-[0.2em]">
-                    © 2024 Laxmi Flour Mill. All rights reserved.
+                    © 2026 Laxmi Flour Mill. All rights reserved.
                 </p>
                 <div className="flex gap-8">
                     <Link href="#" className="text-[10px] text-muted hover:text-dark-brown uppercase tracking-widest">Privacy Policy</Link>

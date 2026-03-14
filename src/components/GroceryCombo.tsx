@@ -2,6 +2,7 @@
 
 import { Package, CheckCircle2 } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
+import Image from "next/image";
 
 export default function GroceryCombo() {
     const leftReveal = useReveal();
@@ -15,10 +16,12 @@ export default function GroceryCombo() {
                     className={`relative reveal reveal-scale ${leftReveal.isVisible ? 'visible' : ''}`}
                 >
                     <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-premium aspect-4/5">
-                        <img
-                            src="/grocery-combo.png"
+                        <Image
+                            src="/essentials_section_1.png"
                             alt="Premium grocery essentials and flour bags"
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 40vw"
                         />
                     </div>
                     {/* Decorative Ring */}
