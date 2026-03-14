@@ -45,7 +45,7 @@ export default function MultigrainHero() {
                         style={{ animationDelay: "200ms" }}
                     >
                         <a
-                            href="https://wa.me/918789685206"
+                            href="https://wa.me/918210134128"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-[#25D366] text-white px-8 py-5 rounded-2xl shadow-premium hover:bg-[#128C7E] transition-all duration-300 flex items-center gap-3 font-bold group"

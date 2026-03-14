@@ -28,7 +28,7 @@ export default function Hero() {
 
                     <div className="flex flex-wrap gap-5">
                         <a 
-                            href="https://wa.me/918789685206"
+                            href="https://wa.me/918210134128"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-accent-green text-white px-8 py-5 rounded-2xl shadow-premium hover:bg-dark-brown transition-all duration-300 flex items-center gap-3 group"

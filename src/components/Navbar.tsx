@@ -56,7 +56,7 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <a 
-                        href="tel:+918789685206"
+                        href="tel:+918210134128"
                         className="bg-dark-brown text-white px-6 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2"
                     >
                         <Phone className="w-4 h-4" />
@@ -93,7 +93,7 @@ export default function Navbar() {
                     ))}
                     <hr className="border-wheat/20" />
                     <a 
-                        href="tel:+918789685206"
+                        href="tel:+918210134128"
                         className="w-full bg-accent-green text-white py-4 rounded-xl flex justify-center items-center gap-2"
                     >
                         <Phone className="w-5 h-5" />
