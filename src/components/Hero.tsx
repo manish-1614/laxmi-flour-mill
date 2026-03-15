@@ -3,8 +3,11 @@
 import { ArrowRight, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import lfmHero from "../../public/lfm_hero.png";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Hero() {
+    const { t } = useLanguage();
+
     return (
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">
             {/* Background Decorative Element */}
@@ -14,15 +17,14 @@ export default function Hero() {
                 <div className="space-y-10 animate-fade-in-left">
                     <div className="space-y-4">
                         <span className="inline-block text-accent-green font-semibold tracking-[0.2em] uppercase text-sm animate-fade-in-up delay-300">
-                            Artisanal & Chemical Free
+                            {t.heroLanding.artisanal}
                         </span>
                         <h1 className="text-6xl md:text-7xl leading-[1.1] text-dark-brown">
-                            Fresh Chakki Atta,
-                            <span className="block italic text-wheat">Milled Daily.</span>
+                            {t.heroLanding.freshChakki}
+                            <span className="block italic text-wheat">{t.heroLanding.milledDaily}</span>
                         </h1>
                         <p className="text-lg text-muted max-w-lg leading-relaxed">
-                            Hand-selected grains, stone-ground in small batches to preserve natural aroma,
-                            essential nutrients, and the authentic taste of tradition.
+                            {t.heroLanding.description}
                         </p>
                     </div>
 
@@ -34,31 +36,36 @@ export default function Hero() {
                             className="bg-accent-green text-white px-8 py-5 rounded-2xl shadow-premium hover:bg-dark-brown transition-all duration-300 flex items-center gap-3 group"
                         >
                             <ShoppingBag className="w-5 h-5" />
-                            Order Fresh Atta
+                            {t.heroLanding.orderFreshAtta}
                             <div className="animate-bounce-x">
                                 <ArrowRight className="w-5 h-5" />
                             </div>
                         </a>
 
-                        <button className="border-2 border-dark-brown/10 text-dark-brown px-8 py-5 rounded-2xl hover:border-dark-brown transition-colors duration-300 font-medium">
-                            Visit Our Store
-                        </button>
+                        <a 
+                            href="https://maps.app.goo.gl/W4U3gtLgTjctBz4H7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border-2 border-dark-brown/10 text-dark-brown px-8 py-5 rounded-2xl hover:border-dark-brown transition-colors duration-300 font-medium flex items-center justify-center"
+                        >
+                            {t.heroLanding.visitStore}
+                        </a>
                     </div>
 
                     <div className="flex items-center gap-8 pt-6 border-t border-wheat/20">
                         <div>
-                            <p className="text-2xl font-bold text-dark-brown">100%</p>
-                            <p className="text-xs text-muted uppercase tracking-tighter">Pure Grain</p>
+                            <p className="text-2xl font-bold text-dark-brown">{t.heroLanding.stats.pureGrain}</p>
+                            <p className="text-xs text-muted uppercase tracking-tighter">{t.heroLanding.stats.pureGrainLabel}</p>
                         </div>
                         <div className="w-px h-10 bg-wheat/20" />
                         <div>
-                            <p className="text-2xl font-bold text-dark-brown">Daily</p>
-                            <p className="text-xs text-muted uppercase tracking-tighter">Fresh Milling</p>
+                            <p className="text-2xl font-bold text-dark-brown">{t.heroLanding.stats.daily}</p>
+                            <p className="text-xs text-muted uppercase tracking-tighter">{t.heroLanding.stats.freshMilling}</p>
                         </div>
                         <div className="w-px h-10 bg-wheat/20" />
                         <div>
-                            <p className="text-2xl font-bold text-dark-brown">Zero</p>
-                            <p className="text-xs text-muted uppercase tracking-tighter">Preservatives</p>
+                            <p className="text-2xl font-bold text-dark-brown">{t.heroLanding.stats.zero}</p>
+                            <p className="text-xs text-muted uppercase tracking-tighter">{t.heroLanding.stats.preservatives}</p>
                         </div>
                     </div>
                 </div>
@@ -82,8 +89,8 @@ export default function Hero() {
                             <span className="text-2xl">🌾</span>
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-dark-brown">MP Golden Wheat</p>
-                            <p className="text-[10px] text-muted uppercase tracking-widest">Our Best Seller</p>
+                            <p className="text-sm font-bold text-dark-brown">{t.heroLanding.badge.title}</p>
+                            <p className="text-[10px] text-muted uppercase tracking-widest">{t.heroLanding.badge.subtitle}</p>
                         </div>
                     </div>
 

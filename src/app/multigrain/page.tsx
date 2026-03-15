@@ -7,7 +7,6 @@ import HealthBenefits from "@/components/multigrain/HealthBenefits";
 import ConditionGrainRatios from "@/components/multigrain/ConditionGrainRatios";
 import ProcessBanner from "@/components/multigrain/ProcessBanner";
 import ShelfLifeStrip from "@/components/multigrain/ShelfLifeStrip";
-import ProductLineStrategy from "@/components/multigrain/ProductLineStrategy";
 import MultigrainFAQ from "@/components/multigrain/MultigrainFAQ";
 import MultigrainCTA from "@/components/multigrain/MultigrainCTA";
 import Footer from "@/components/Footer";
@@ -28,7 +27,6 @@ export default function MultigrainPage() {
             <HealthBenefits />
             <ConditionGrainRatios />
             <ProcessBanner />
-            <ProductLineStrategy />
             <ShelfLifeStrip />
             <MultigrainFAQ />
             <MultigrainCTA />

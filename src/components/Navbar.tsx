@@ -1,26 +1,32 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingBasket, Menu, X, Phone } from "lucide-react";
+import { ShoppingBasket, Menu, X, Phone, Globe } from "lucide-react";
 import Link from "next/link";
-
-const navLinks = [
-    { name: "Home", href: "#", highlight: false },
-    { name: "Our Process", href: "#process", highlight: false },
-    { name: "Products", href: "#products", highlight: false },
-    { name: "Testimonials", href: "#testimonials", highlight: false },
-    { name: "Multigrain Atta", href: "/multigrain", highlight: true },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { language, setLanguage, t } = useLanguage();
+
+    const navLinks = [
+        { name: t.mainNav.home, href: "#", highlight: false },
+        { name: t.mainNav.ourProcess, href: "#process", highlight: false },
+        { name: t.mainNav.products, href: "#products", highlight: false },
+        { name: t.mainNav.testimonials, href: "#testimonials", highlight: false },
+        { name: t.mainNav.multigrainAtta, href: "/multigrain", highlight: true },
+    ];
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const toggleLanguage = () => {
+        setLanguage(language === "en" ? "hi" : "en");
+    };
 
     return (
         <header
@@ -55,19 +61,38 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
+
+                    {/* Language Toggle */}
+                    <button
+                        onClick={toggleLanguage}
+                        className="flex items-center gap-1.5 text-xs font-bold bg-dark-brown/5 text-dark-brown px-3 py-1.5 rounded-lg hover:bg-wheat/20 transition-colors uppercase"
+                        title="Toggle Language"
+                    >
+                        <Globe className="w-4 h-4" />
+                        {language === "en" ? "HI" : "EN"}
+                    </button>
+
                     <a 
                         href="tel:+918210134128"
                         className="bg-dark-brown text-white px-6 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2"
                     >
                         <Phone className="w-4 h-4" />
-                        Contact Us
+                        {t.mainNav.contactUs}
                     </a>
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="md:hidden text-dark-brown" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-                </button>
+                <div className="md:hidden flex items-center gap-4">
+                    <button
+                        onClick={toggleLanguage}
+                        className="flex items-center justify-center text-xs font-bold bg-dark-brown/5 text-dark-brown w-8 h-8 rounded-lg hover:bg-wheat/20 transition-colors uppercase"
+                    >
+                        {language === "en" ? "HI" : "EN"}
+                    </button>
+                    <button className="text-dark-brown" onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                    </button>
+                </div>
             </nav>
 
             {/* Mobile Menu */}
@@ -97,7 +122,7 @@ export default function Navbar() {
                         className="w-full bg-accent-green text-white py-4 rounded-xl flex justify-center items-center gap-2"
                     >
                         <Phone className="w-5 h-5" />
-                        Call Now
+                        {t.mainNav.contactUs}
                     </a>
                 </ul>
             </div>

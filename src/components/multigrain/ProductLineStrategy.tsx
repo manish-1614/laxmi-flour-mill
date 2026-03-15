@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const PORTFOLIO = {
     Phase1: [
@@ -162,6 +163,7 @@ const STRATEGIES = [
 
 export default function ProductLineStrategy() {
     const reveal = useReveal();
+    const { language, t } = useLanguage();
     const [activePhase, setActivePhase] = useState<"Phase1" | "Phase2">("Phase1");
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -179,14 +181,13 @@ export default function ProductLineStrategy() {
                     }`}
                 >
                     <span className="inline-block text-accent-green font-semibold tracking-[0.2em] uppercase text-xs">
-                        Market Strategy
+                        {t.productStrategy.subtitle}
                     </span>
                     <h2 className="text-3xl md:text-5xl text-dark-brown">
-                        Product Line Expansion.
+                        {t.productStrategy.title}
                     </h2>
                     <p className="text-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-                        A phased approach to dominating the multigrain atta market, from everyday
-                        core blends to highly specialized health segments.
+                        {t.productStrategy.description}
                     </p>
                 </div>
 
@@ -204,7 +205,7 @@ export default function ProductLineStrategy() {
                                     : "text-muted hover:text-dark-brown"
                             }`}
                         >
-                            Phase 1 (M 1-3)
+                            {t.productStrategy.phase1}
                         </button>
                         <button
                             onClick={() => {
@@ -217,7 +218,7 @@ export default function ProductLineStrategy() {
                                     : "text-muted hover:text-dark-brown"
                             }`}
                         >
-                            Phase 2 (M 4-8)
+                            {t.productStrategy.phase2}
                         </button>
                     </div>
                 </div>
@@ -226,7 +227,7 @@ export default function ProductLineStrategy() {
                     {/* Left Side: Chips Selection */}
                     <div className="xl:w-1/3">
                         <h4 className="text-xs font-bold text-dark-brown uppercase tracking-widest mb-4">
-                            Select a Product
+                            {t.productStrategy.selectProduct}
                         </h4>
                         <div className="flex flex-row xl:flex-col gap-3 overflow-x-auto xl:overflow-y-auto pb-4 xl:pb-0 hide-scrollbar w-full xl:max-h-[500px]">
                             {PORTFOLIO[activePhase].map((p, i) => (
@@ -242,10 +243,10 @@ export default function ProductLineStrategy() {
                                     <div className="text-3xl mt-1">{p.icon}</div>
                                     <div>
                                         <h5 className="font-semibold text-dark-brown text-sm">
-                                            {p.name}
+                                            {language === 'hi' ? p.hindi : p.name}
                                         </h5>
                                         <div className="text-xs text-muted mb-2">
-                                            {p.hindi}
+                                            {language === 'hi' ? p.name : p.hindi}
                                         </div>
                                         <span
                                             className={`text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide ${p.tierClass}`}
@@ -267,16 +268,16 @@ export default function ProductLineStrategy() {
                                     <div className="flex items-center gap-3 mb-2">
                                         <span className="text-4xl">{activeProduct.icon}</span>
                                         <h3 className="text-2xl font-bold text-dark-brown">
-                                            {activeProduct.name}
+                                            {language === 'hi' ? activeProduct.hindi : activeProduct.name}
                                         </h3>
                                     </div>
                                     <p className="text-muted text-sm ml-14">
-                                        {activeProduct.hindi} • {activeProduct.tier}
+                                        {language === 'hi' ? activeProduct.name : activeProduct.hindi} • {activeProduct.tier}
                                     </p>
                                 </div>
                                 
                                 <div className="md:text-right bg-wheat/5 p-4 rounded-xl border border-wheat/10 shrink-0">
-                                    <p className="text-[10px] uppercase tracking-widest text-muted mb-1">Retail Price</p>
+                                    <p className="text-[10px] uppercase tracking-widest text-muted mb-1">{t.productStrategy.retailPrice}</p>
                                     <p className="text-2xl font-bold text-dark-brown">
                                         {activeProduct.price} <span className="text-sm font-medium text-muted">/kg</span>
                                     </p>
@@ -288,7 +289,7 @@ export default function ProductLineStrategy() {
                                 <div>
                                     <h4 className="text-[11px] font-bold text-dark-brown uppercase tracking-widest mb-2 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 rounded-full bg-wheat"></span>
-                                        Grain Composition
+                                        {t.productStrategy.grainComposition}
                                     </h4>
                                     <p className="text-sm text-dark-brown/80 font-medium leading-relaxed bg-wheat/5 p-4 rounded-xl border border-wheat/10">
                                         {activeProduct.grains}
@@ -299,7 +300,7 @@ export default function ProductLineStrategy() {
                                     <div>
                                         <h4 className="text-[11px] font-bold text-dark-brown uppercase tracking-widest mb-2 flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-accent-green"></span>
-                                            Available Sizes
+                                            {t.productStrategy.availableSizes}
                                         </h4>
                                         <p className="text-sm text-muted bg-white border border-wheat/10 p-3 rounded-xl">
                                             {activeProduct.sizes}
@@ -314,7 +315,7 @@ export default function ProductLineStrategy() {
                                     <div className="text-wheat text-xl">💡</div>
                                     <div>
                                         <h5 className="text-xs font-bold text-dark-brown uppercase tracking-wider mb-1">
-                                            Why this sells
+                                            {t.productStrategy.whyThisSells}
                                         </h5>
                                         <p className="text-sm text-dark-brown/90 leading-relaxed">
                                             {activeProduct.insight}
@@ -325,7 +326,7 @@ export default function ProductLineStrategy() {
                                     <div className="text-dark-brown text-xl">🎯</div>
                                     <div>
                                         <h5 className="text-xs font-bold text-dark-brown uppercase tracking-wider mb-1">
-                                            Channel Focus
+                                            {t.productStrategy.channelFocus}
                                         </h5>
                                         <p className="text-sm text-dark-brown/90 leading-relaxed">
                                             {activeProduct.channel}
@@ -342,9 +343,9 @@ export default function ProductLineStrategy() {
                 <div className="mt-20 pt-16 border-t border-wheat/10">
                     <div className="text-center mb-10">
                         <span className="inline-block text-accent-green font-semibold tracking-[0.2em] uppercase text-[10px]">
-                            Execution
+                            {t.productStrategy.execution}
                         </span>
-                        <h3 className="text-2xl text-dark-brown mt-2">Go-To-Market Priorities</h3>
+                        <h3 className="text-2xl text-dark-brown mt-2">{t.productStrategy.goToMarket}</h3>
                     </div>
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

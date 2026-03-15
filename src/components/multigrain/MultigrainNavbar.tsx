@@ -1,26 +1,26 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingBasket, Menu, X, Phone, ArrowLeft } from "lucide-react";
+import { ShoppingBasket, Menu, X, Phone, ArrowLeft, Globe } from "lucide-react";
 import Link from "next/link";
+import { useLanguage, Language } from "@/i18n/LanguageContext";
 
-const sectionLinks = [
-    { label: "Grains", href: "#grains" },
-    { label: "Blends", href: "#blends" },
-    { label: "Benefits", href: "#benefits" },
-    { label: "Process", href: "#process" },
-    { label: "FAQ", href: "#faq" },
-];
+const SECTION_KEYS = ["grains", "blends", "benefits", "process", "faq"] as const;
 
 export default function MultigrainNavbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { language, setLanguage, t } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const toggleLanguage = () => {
+        setLanguage(language === "en" ? "hi" : "en");
+    };
 
     return (
         <header
@@ -45,31 +45,52 @@ export default function MultigrainNavbar() {
                         className="flex items-center gap-1.5 text-xs font-medium text-dark-brown/60 hover:text-accent-green transition-colors uppercase tracking-widest"
                     >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        Home
+                        {t.nav.home}
                     </Link>
                     <span className="w-px h-5 bg-wheat/20" />
-                    {sectionLinks.map((link) => (
+                    {SECTION_KEYS.map((key) => (
                         <a
-                            key={link.href}
-                            href={link.href}
+                            key={key}
+                            href={`#${key}`}
                             className="text-xs font-medium text-dark-brown/60 hover:text-accent-green transition-colors uppercase tracking-widest"
                         >
-                            {link.label}
+                            {t.nav[key]}
                         </a>
                     ))}
+                    
+                    {/* Language Toggle */}
+                    <button
+                        onClick={toggleLanguage}
+                        className="flex items-center gap-1.5 text-xs font-bold bg-dark-brown/5 text-dark-brown px-3 py-1.5 rounded-lg hover:bg-wheat/20 transition-colors uppercase ml-2"
+                        title="Toggle Language"
+                    >
+                        <Globe className="w-4 h-4" />
+                        {language === "en" ? "HI" : "EN"}
+                    </button>
+
                     <a
                         href="tel:+918210134128"
-                        className="bg-dark-brown text-white px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2 ml-2"
+                        className="bg-dark-brown text-white px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-accent-green transition-colors flex items-center gap-2"
                     >
                         <Phone className="w-4 h-4" />
-                        Contact
+                        {t.nav.contact}
                     </a>
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="lg:hidden text-dark-brown" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-                </button>
+                <div className="lg:hidden flex items-center gap-4">
+                    {/* Language Toggle Mobile */}
+                    <button
+                        onClick={toggleLanguage}
+                        className="flex items-center justify-center text-xs font-bold bg-dark-brown/5 text-dark-brown w-8 h-8 rounded-lg hover:bg-wheat/20 transition-colors uppercase"
+                    >
+                        {language === "en" ? "HI" : "EN"}
+                    </button>
+                    
+                    <button className="text-dark-brown" onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                    </button>
+                </div>
             </nav>
 
             {/* Mobile Menu */}
@@ -86,18 +107,18 @@ export default function MultigrainNavbar() {
                             className="text-base font-medium text-dark-brown hover:text-accent-green flex items-center justify-center gap-2"
                         >
                             <ArrowLeft className="w-5 h-5" />
-                            Back to Home
+                            {t.nav.backToHome}
                         </Link>
                     </li>
                     <hr className="border-wheat/20" />
-                    {sectionLinks.map((link) => (
-                        <li key={link.href}>
+                    {SECTION_KEYS.map((key) => (
+                        <li key={key}>
                             <a
-                                href={link.href}
+                                href={`#${key}`}
                                 onClick={() => setIsOpen(false)}
                                 className="text-base font-medium text-dark-brown/70 hover:text-accent-green transition-colors uppercase tracking-widest"
                             >
-                                {link.label}
+                                {t.nav[key]}
                             </a>
                         </li>
                     ))}
@@ -108,7 +129,7 @@ export default function MultigrainNavbar() {
                             className="w-full bg-accent-green text-white py-4 rounded-xl flex justify-center items-center gap-2"
                         >
                             <Phone className="w-5 h-5" />
-                            Call Now
+                            {t.nav.callNow}
                         </a>
                     </li>
                 </ul>

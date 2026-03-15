@@ -2,11 +2,13 @@
 
 import { MessageSquare, PhoneCall, Sparkles } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function MultigrainCTA() {
     const titleReveal = useReveal();
     const buttonReveal = useReveal();
     const comingSoonReveal = useReveal();
+    const { t } = useLanguage();
 
     return (
         <section className="py-28 relative overflow-hidden bg-ivory">
@@ -20,15 +22,14 @@ export default function MultigrainCTA() {
                     className={`space-y-6 reveal reveal-scale ${titleReveal.isVisible ? "visible" : ""}`}
                 >
                     <span className="inline-block text-accent-green font-semibold tracking-[0.2em] uppercase text-xs">
-                        Ready to Start?
+                        {t.cta.readyToStart}
                     </span>
                     <h2 className="text-4xl md:text-6xl text-dark-brown leading-tight">
-                        Your Custom Blend
-                        <span className="block italic text-wheat">Awaits.</span>
+                        {t.cta.yourCustomBlend}
+                        <span className="block italic text-wheat">{t.cta.awaits}</span>
                     </h2>
                     <p className="text-muted max-w-lg mx-auto leading-relaxed">
-                        Tell us your health goals, and we&apos;ll recommend the perfect blend.
-                        Order via WhatsApp or call us — we mill it fresh and deliver it the same day.
+                        {t.cta.description}
                     </p>
                 </div>
 
@@ -44,14 +45,14 @@ export default function MultigrainCTA() {
                         className="bg-[#25D366] text-white px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-[#128C7E] transition-all duration-300 shadow-premium group"
                     >
                         <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                        Order on WhatsApp
+                        {t.cta.orderOnWhatsapp}
                     </a>
                     <a
                         href="tel:+918210134128"
                         className="border-2 border-dark-brown/10 text-dark-brown px-10 py-5 rounded-2xl flex items-center gap-3 font-bold hover:bg-dark-brown hover:text-white hover:border-dark-brown transition-all duration-300 group"
                     >
                         <PhoneCall className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                        Call Now
+                        {t.cta.callNow}
                     </a>
                 </div>
 
@@ -64,14 +65,14 @@ export default function MultigrainCTA() {
                         <Sparkles className="w-5 h-5 text-wheat shrink-0" />
                         <div className="text-left">
                             <p className="text-[10px] font-bold text-dark-brown uppercase tracking-widest">
-                                Coming Soon
+                                {t.cta.comingSoon}
                             </p>
                             <p className="text-sm text-muted mt-0.5">
-                                Design your own custom grain blend online — we&apos;ll mill it to order within 24 hours
+                                {t.cta.comingSoonDesc}
                             </p>
                         </div>
                         <span className="bg-wheat/15 text-wheat text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest shrink-0">
-                            Beta
+                            {t.cta.beta}
                         </span>
                     </div>
                 </div>
