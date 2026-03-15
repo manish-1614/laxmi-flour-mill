@@ -1,0 +1,159 @@
+
+<style>
+  .section-head { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: .04em; text-transform: uppercase; margin: 20px 0 10px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 8px; }
+  .pcard { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 12px 14px; cursor: pointer; transition: border-color .15s; }
+  .pcard:hover { border-color: var(--color-border-primary); }
+  .pcard.featured { border: 1.5px solid var(--color-border-info); }
+  .ptier { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+  .tier-core { background: var(--color-background-success); color: var(--color-text-success); }
+  .tier-health { background: var(--color-background-info); color: var(--color-text-info); }
+  .tier-premium { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .tier-specialty { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .pname { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .phindi { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 8px; }
+  .pprice { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .pprice span { font-size: 11px; font-weight: 400; color: var(--color-text-secondary); }
+  .pgrains { font-size: 11px; color: var(--color-text-secondary); margin-top: 4px; line-height: 1.5; }
+  .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 100; align-items: center; justify-content: center; }
+  .modal-bg.open { display: flex; }
+  .modal { background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1.5rem; max-width: 420px; width: 90%; position: relative; }
+  .modal-close { position: absolute; top: 12px; right: 14px; font-size: 18px; cursor: pointer; color: var(--color-text-secondary); background: none; border: none; }
+  .modal-title { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .modal-sub { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 14px; }
+  .modal-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 13px; }
+  .modal-row:last-child { border: none; }
+  .modal-label { color: var(--color-text-secondary); }
+  .strategy-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 14px; font-size: 13px; color: var(--color-text-secondary); margin-bottom: 10px; line-height: 1.6; }
+  .strategy-box strong { color: var(--color-text-primary); }
+  .phase-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .phase-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; flex-shrink: 0; }
+  .phase-body { flex: 1; font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+  .phase-body strong { color: var(--color-text-primary); }
+</style>
+
+<div class="section-head">Phase 1 — Launch Portfolio (Month 1–3): Start with these 5 SKUs</div>
+
+<div class="product-grid">
+  <div class="pcard featured" onclick="openModal('Laxmi Aarogya Atta','लक्ष्मी आरोग्य आटा','Core Multigrain','tier-core','Wheat 50%, Jowar 20%, Bajra 15%, Ragi 10%, Barley 5%','₹65–75','1kg / 2kg / 5kg','Mass market family atta. Your volume driver. Easy rotis. Mild nutty taste.','Replace plain chakki atta. Target every household.')">
+    <span class="ptier tier-core">Core</span>
+    <div class="pname">Laxmi Aarogya Atta</div>
+    <div class="phindi">5-grain family blend</div>
+    <div class="pprice">₹65–75 <span>/kg</span></div>
+    <div class="pgrains">Wheat · Jowar · Bajra · Ragi · Barley</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Madhumeha Atta','लक्ष्मी मधुमेह आटा','Diabetic Atta','tier-health','Barley 25%, Jowar 20%, Wheat 20%, Bajra 15%, Buckwheat 10%, Fenugreek 5%, Oats 5%','₹90–110','500g / 1kg / 2kg','India has 101M diabetics. Biggest addressable health atta market.','Doctor referrals, diabetic clinics, pharmacies near you.')">
+    <span class="ptier tier-health">Health</span>
+    <div class="pname">Laxmi Madhumeha Atta</div>
+    <div class="phindi">Diabetic blend</div>
+    <div class="pprice">₹90–110 <span>/kg</span></div>
+    <div class="pgrains">Barley · Jowar · Buckwheat · Fenugreek · Oats</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Hriday Atta','लक्ष्मी हृदय आटा','Cardiac Atta','tier-health','Oats 25%, Barley 20%, Wheat 20%, Jowar 15%, Flaxseed 10%, Psyllium husk 5%, Ragi 5%','₹85–105','500g / 1kg','Oat beta-glucan clinically proven to reduce LDL cholesterol.','Partner with cardiologists, cholesterol clinics, cardiac rehab centers.')">
+    <span class="ptier tier-health">Health</span>
+    <div class="pname">Laxmi Hriday Atta</div>
+    <div class="phindi">Cardiac / heart blend</div>
+    <div class="pprice">₹85–105 <span>/kg</span></div>
+    <div class="pgrains">Oats · Barley · Flaxseed · Psyllium husk · Ragi</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Ragi Shakti Atta','लक्ष्मी रागी शक्ति आटा','Bone Health Atta','tier-health','Ragi 40%, Wheat 20%, Amaranth 15%, Sesame 10%, Jowar 10%, Moringa 5%','₹85–100','500g / 1kg / 2kg','Ragi has 344mg calcium/100g — more than milk. Highest-calcium atta possible.','Post-menopausal women, elderly, kids, lactose-intolerant segment.')">
+    <span class="ptier tier-health">Health</span>
+    <div class="pname">Laxmi Ragi Shakti Atta</div>
+    <div class="phindi">Bone health blend</div>
+    <div class="pprice">₹85–100 <span>/kg</span></div>
+    <div class="pgrains">Ragi 40% · Amaranth · Sesame · Moringa</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Sampoorn Atta','लक्ष्मी संपूर्ण आटा','Gluten-Free Millet Atta','tier-specialty','Jowar 30%, Ragi 25%, Bajra 20%, Buckwheat 15%, Amaranth 10%','₹110–130','500g / 1kg','Fastest growing niche — 47% market growth in FY2023-24. No wheat at all.','Celiac, gluten-sensitive customers. Premium D2C online channel.')">
+    <span class="ptier tier-specialty">Specialty</span>
+    <div class="pname">Laxmi Sampoorn Atta</div>
+    <div class="phindi">Gluten-free millet blend</div>
+    <div class="pprice">₹110–130 <span>/kg</span></div>
+    <div class="pgrains">Jowar · Ragi · Bajra · Buckwheat · Amaranth</div>
+  </div>
+</div>
+
+<div class="section-head">Phase 2 — Expansion Portfolio (Month 4–8): Add these 5 SKUs</div>
+<div class="product-grid">
+  <div class="pcard" onclick="openModal('Laxmi Naari Shakti Atta','लक्ष्मी नारी शक्ति आटा','PCOS / Hormonal Atta','tier-health','Jowar 25%, Ragi 20%, Barley 20%, Quinoa 15%, Wheat 10%, Flaxseed 10%','₹100–120','500g / 1kg','Massive underserved market — PCOS affects 1 in 5 Indian women.','Gynaecology clinics, women\'s health influencers, SHG groups.')">
+    <span class="ptier tier-health">Health</span>
+    <div class="pname">Laxmi Naari Shakti Atta</div>
+    <div class="phindi">PCOS / hormonal blend</div>
+    <div class="pprice">₹100–120 <span>/kg</span></div>
+    <div class="pgrains">Jowar · Ragi · Barley · Quinoa · Flaxseed</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Bachhon Ka Atta','लक्ष्मी बच्चों का आटा','Kids Growth Atta','tier-health','Wheat 35%, Ragi 25%, Moong dal 20%, Bajra 10%, Amaranth 10%','₹80–95','500g / 1kg / 2kg','Mild taste, high protein, age-safe. No whole seeds.','Pediatric clinics, mother-baby groups, WhatsApp mommy communities.')">
+    <span class="ptier tier-health">Health</span>
+    <div class="pname">Laxmi Bachhon Ka Atta</div>
+    <div class="phindi">Kids growth blend</div>
+    <div class="pprice">₹80–95 <span>/kg</span></div>
+    <div class="pgrains">Wheat · Ragi · Moong dal · Bajra · Amaranth</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Garbhavati Atta','लक्ष्मी गर्भावती आटा','Pregnancy / Maternal Atta','tier-health','Wheat 30%, Ragi 20%, Bajra 20%, Masoor 15%, Moong 10%, Amaranth 5%','₹95–115','500g / 1kg','Iron + folate critical during pregnancy. Only safe-for-trimester blend.','OB-GYN referrals, maternity clinics, mother-baby WhatsApp groups.')">
+    <span class="ptier tier-health">Health</span>
+    <div class="pname">Laxmi Garbhavati Atta</div>
+    <div class="phindi">Pregnancy / maternal blend</div>
+    <div class="pprice">₹95–115 <span>/kg</span></div>
+    <div class="pgrains">Ragi · Bajra · Masoor · Moong · Amaranth</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Protein Atta','लक्ष्मी प्रोटीन आटा','Sports / High-Protein Atta','tier-premium','Wheat 40%, Chickpea 20%, Moong dal 15%, Quinoa 15%, Soy flour 10%','₹110–135','500g / 1kg','18–22g protein/100g. Targets India\'s growing fitness & gym market.','Gyms, yoga centers, sports nutrition influencers, D2C online.')">
+    <span class="ptier tier-premium">Premium</span>
+    <div class="pname">Laxmi Protein Atta</div>
+    <div class="phindi">Sports / high-protein blend</div>
+    <div class="pprice">₹110–135 <span>/kg</span></div>
+    <div class="pgrains">Wheat · Chickpea · Moong · Quinoa · Soy</div>
+  </div>
+  <div class="pcard" onclick="openModal('Laxmi Immunity Atta','लक्ष्मी इम्युनिटी आटा','Immunity Booster Atta','tier-premium','Bajra 20%, Amaranth 20%, Buckwheat 15%, Oats 15%, Wheat 15%, Barley 10%, Moringa 5%','₹100–120','500g / 1kg','Post-COVID health consciousness. Moringa, rutin, beta-glucans in one blend.','Health stores, online D2C, corporate wellness programs.')">
+    <span class="ptier tier-premium">Premium</span>
+    <div class="pname">Laxmi Immunity Atta</div>
+    <div class="phindi">Immunity booster blend</div>
+    <div class="pprice">₹100–120 <span>/kg</span></div>
+    <div class="pgrains">Bajra · Amaranth · Buckwheat · Oats · Moringa</div>
+  </div>
+</div>
+
+<div class="section-head">Go-To-Market Priorities</div>
+<div class="phase-row">
+  <div class="phase-num" style="background:var(--color-background-success);color:var(--color-text-success);">1</div>
+  <div class="phase-body"><strong>Your #1 USP — Fresh milling, same-day delivery.</strong> No packaged brand can match this. Plaster it on every pack, every WhatsApp message, every kirana shelf strip. "Aaj pisa, aaj delivered."</div>
+</div>
+<div class="phase-row">
+  <div class="phase-num" style="background:var(--color-background-info);color:var(--color-text-info);">2</div>
+  <div class="phase-body"><strong>Doctor referral program.</strong> Diabetic and cardiac atta sell themselves when a doctor recommends them. Visit 5–10 local physicians and dietitians. Leave samples and a simple brochure with grain ratios and clinical references (NIN / ICMR data).</div>
+</div>
+<div class="phase-row">
+  <div class="phase-num" style="background:var(--color-background-warning);color:var(--color-text-warning);">3</div>
+  <div class="phase-body"><strong>Custom blend service at ₹20–30/kg premium.</strong> Let customers choose their own ratio. This locks them in — they can't get a custom blend anywhere else. Build loyalty before the big brands wake up to your locality.</div>
+</div>
+<div class="phase-row">
+  <div class="phase-num" style="background:var(--color-background-danger);color:var(--color-text-danger);">4</div>
+  <div class="phase-body"><strong>WhatsApp subscription model.</strong> Weekly delivery, 5% discount, auto-reminder at 7 days. Target 200 households on subscription by Month 3 — that alone delivers ₹60,000–90,000/month recurring revenue at minimum.</div>
+</div>
+
+<div id="modalBg" class="modal-bg" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+function openModal(name, hindi, tier, tierClass, grains, price, sizes, insight, channel) {
+  const content = `
+    <div class="modal-title">${name}</div>
+    <div class="modal-sub">${hindi}</div>
+    <span class="ptier ${tierClass}" style="margin-bottom:14px;display:inline-block">${tier}</span>
+    <div class="modal-row"><span class="modal-label">Grain blend</span><span style="text-align:right;max-width:230px">${grains}</span></div>
+    <div class="modal-row"><span class="modal-label">Selling price</span><span>${price}/kg</span></div>
+    <div class="modal-row"><span class="modal-label">Pack sizes</span><span>${sizes}</span></div>
+    <div style="margin-top:14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;font-size:12px;color:var(--color-text-secondary);line-height:1.6">
+      <strong style="color:var(--color-text-primary)">Why this sells:</strong> ${insight}<br><br>
+      <strong style="color:var(--color-text-primary)">Channel focus:</strong> ${channel}
+    </div>
+  `;
+  document.getElementById('modalContent').innerHTML = content;
+  document.getElementById('modalBg').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modalBg').classList.remove('open');
+}
+</script>

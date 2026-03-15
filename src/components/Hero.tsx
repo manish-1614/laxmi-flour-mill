@@ -27,7 +27,7 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-wrap gap-5">
-                        <a 
+                        <a
                             href="https://wa.me/918210134128"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -82,7 +82,7 @@ export default function Hero() {
                             <span className="text-2xl">🌾</span>
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-dark-brown">Bansi Wheat</p>
+                            <p className="text-sm font-bold text-dark-brown">MP Golden Wheat</p>
                             <p className="text-[10px] text-muted uppercase tracking-widest">Our Best Seller</p>
                         </div>
                     </div>
