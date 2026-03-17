@@ -41,7 +41,25 @@ export const en = {
     whyThisSells: "Why this sells",
     channelFocus: "Channel Focus",
     execution: "Execution",
-    goToMarket: "Go-To-Market Priorities"
+    goToMarket: "Go-To-Market Priorities",
+    strategies: [
+      {
+        title: "Your #1 USP — Fresh milling",
+        body: "Fresh milling, same-day delivery. No packaged brand can match this. Plaster it on every pack, every WhatsApp message, every kirana shelf strip. \"Aaj pisa, aaj delivered.\"",
+      },
+      {
+        title: "Doctor referral program",
+        body: "Diabetic and cardiac atta sell themselves when a doctor recommends them. Visit 5–10 local physicians and dietitians. Leave samples and a simple brochure with grain ratios and clinical references.",
+      },
+      {
+        title: "Custom blend service",
+        body: "Let customers choose their own ratio. This locks them in — they can't get a custom blend anywhere else. Build loyalty before the big brands wake up to your locality.",
+      },
+      {
+        title: "Subscription model",
+        body: "WhatsApp subscription model. Weekly delivery, 5% discount, auto-reminder at 7 days. Target 200 households on subscription by Month 3 = fixed recurring revenue.",
+      }
+    ]
   },
   cta: {
     readyToStart: "Ready to Start?",
@@ -81,5 +99,14 @@ export const en = {
       title: "MP Golden Wheat",
       subtitle: "Our Best Seller"
     }
+  },
+  footer: {
+    tagline: "Reviving the tradition of fresh, stone-ground flour for modern homes. Pure, nutritious, and delivered with love from our family to yours.",
+    quickLinks: "Quick Links",
+    contactUs: "Contact Us",
+    address: "Kadru Kumhar Toli, Ranchi, 834002",
+    rights: "All rights reserved.",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service"
   }
 };

@@ -62,10 +62,10 @@ export default function MultigrainHero() {
                                 {t.hero.orderOnWhatsapp}
                             </a>
                             <a
-                                href="#blends"
+                                href="#custom-blends"
                                 className="border-2 border-dark-brown/10 text-dark-brown px-8 py-5 rounded-2xl hover:border-wheat hover:text-wheat transition-all duration-300 font-medium flex items-center gap-2"
                             >
-                                {t.hero.exploreBlends}
+                                {t.nav.customBlends}
                                 <ArrowDown className="w-4 h-4" />
                             </a>
                         </div>

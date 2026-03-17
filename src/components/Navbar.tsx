@@ -68,7 +68,7 @@ export default function Navbar() {
                         title="Toggle Language"
                     >
                         <Globe className="w-4 h-4" />
-                        {language === "en" ? "HI" : "EN"}
+                        {language === "en" ? "अ" : "EN"}
                     </button>
 
                     <a 

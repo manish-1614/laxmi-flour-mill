@@ -1,17 +1,29 @@
 "use client";
 
 import { useReveal } from "@/hooks/useReveal";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const items = [
-    { icon: "🌾", text: "You Choose the Grain" },
-    { icon: "⚙️", text: "Live Stone Grinding" },
-    { icon: "🧪", text: "Chemical-Free" },
-    { icon: "🏡", text: "Local Family Store" },
-    { icon: "🛍️", text: "Store Pickup" },
-];
+const translations = {
+    en: [
+        { icon: "🌾", text: "You Choose the Grain" },
+        { icon: "⚙️", text: "Live Stone Grinding" },
+        { icon: "🧪", text: "Chemical-Free" },
+        { icon: "🏡", text: "Local Family Store" },
+        { icon: "🛍️", text: "Store Pickup" },
+    ],
+    hi: [
+        { icon: "🌾", text: "आप अनाज चुनें" },
+        { icon: "⚙️", text: "लाइव पत्थर की पिसाई" },
+        { icon: "🧪", text: "रसायन मुक्त" },
+        { icon: "🏡", text: "स्थानीय पारिवारिक स्टोर" },
+        { icon: "🛍️", text: "स्टोर से लें" },
+    ]
+};
 
 export default function TrustStrip() {
     const { ref, isVisible } = useReveal();
+    const { language } = useLanguage();
+    const items = translations[language];
 
     return (
         <section className="bg-wheat/5 border-y border-wheat/10 py-12">

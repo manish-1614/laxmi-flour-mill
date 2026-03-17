@@ -78,6 +78,12 @@ html[lang="hi"] h6 {
   font-family: var(--font-devanagari);
 }
 
+@media (min-width: 1024px) {
+  html[lang="hi"] {
+    font-size: 17.5px; /* Slightly increase base font size for Hindi on larger screens */
+  }
+}
+
 /* Custom Animations */
 @keyframes fadeInUp {
   from {

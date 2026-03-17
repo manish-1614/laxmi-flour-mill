@@ -81,7 +81,7 @@ export default function MultigrainNavbar() {
                         title="Toggle Language"
                     >
                         <Globe className="w-4 h-4" />
-                        {language === "en" ? "HI" : "EN"}
+                        {language === "en" ? "अ" : "EN"}
                     </button>
 
                     <a
@@ -100,7 +100,7 @@ export default function MultigrainNavbar() {
                         onClick={toggleLanguage}
                         className="flex items-center justify-center text-xs font-bold bg-dark-brown/5 text-dark-brown w-8 h-8 rounded-lg hover:bg-wheat/20 transition-colors uppercase"
                     >
-                        {language === "en" ? "HI" : "EN"}
+                        {language === "en" ? "अ" : "EN"}
                     </button>
                     
                     <button className="text-dark-brown" onClick={() => setIsOpen(!isOpen)}>

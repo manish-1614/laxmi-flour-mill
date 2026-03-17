@@ -134,32 +134,30 @@ const PORTFOLIO = {
     ],
 };
 
-const STRATEGIES = [
-    {
-        num: "1",
-        color: "bg-emerald-100 text-emerald-800",
-        title: "Your #1 USP — Fresh milling",
-        body: "Fresh milling, same-day delivery. No packaged brand can match this. Plaster it on every pack, every WhatsApp message, every kirana shelf strip. \"Aaj pisa, aaj delivered.\"",
-    },
-    {
-        num: "2",
-        color: "bg-blue-100 text-blue-800",
-        title: "Doctor referral program",
-        body: "Diabetic and cardiac atta sell themselves when a doctor recommends them. Visit 5–10 local physicians and dietitians. Leave samples and a simple brochure with grain ratios and clinical references.",
-    },
-    {
-        num: "3",
-        color: "bg-amber-100 text-amber-800",
-        title: "Custom blend service",
-        body: "Let customers choose their own ratio. This locks them in — they can't get a custom blend anywhere else. Build loyalty before the big brands wake up to your locality.",
-    },
-    {
-        num: "4",
-        color: "bg-rose-100 text-rose-800",
-        title: "Subscription model",
-        body: "WhatsApp subscription model. Weekly delivery, 5% discount, auto-reminder at 7 days. Target 200 households on subscription by Month 3 = fixed recurring revenue.",
-    },
+const STRATEGY_STYLING = [
+    { num: "1", color: "bg-emerald-100 text-emerald-800" },
+    { num: "2", color: "bg-blue-100 text-blue-800" },
+    { num: "3", color: "bg-amber-100 text-amber-800" },
+    { num: "4", color: "bg-rose-100 text-rose-800" },
 ];
+
+interface Product {
+    name: string;
+    hindi: string;
+    tier: string;
+    tierClass: string;
+    icon: string;
+    grains: string;
+    price: string;
+    sizes: string;
+    insight: string;
+    channel: string;
+}
+
+interface Strategy {
+    title: string;
+    body: string;
+}
 
 export default function ProductLineStrategy() {
     const reveal = useReveal();
@@ -167,7 +165,8 @@ export default function ProductLineStrategy() {
     const [activePhase, setActivePhase] = useState<"Phase1" | "Phase2">("Phase1");
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const activeProduct = PORTFOLIO[activePhase][activeIndex];
+    const activeProduct: Product = PORTFOLIO[activePhase][activeIndex];
+    const strategyData: Strategy[] = t.productStrategy.strategies;
 
     return (
         <section className="bg-ivory py-24 border-t border-wheat/10 relative overflow-hidden">
@@ -349,10 +348,10 @@ export default function ProductLineStrategy() {
                     </div>
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {STRATEGIES.map((s) => (
-                            <div key={s.num} className="bg-white p-6 rounded-2xl border border-wheat/10 hover:-translate-y-1 transition-transform duration-300">
-                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-4 ${s.color}`}>
-                                    {s.num}
+                        {strategyData.map((s: Strategy, i: number) => (
+                            <div key={i} className="bg-white p-6 rounded-2xl border border-wheat/10 hover:-translate-y-1 transition-transform duration-300">
+                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-4 ${STRATEGY_STYLING[i].color}`}>
+                                    {STRATEGY_STYLING[i].num}
                                 </div>
                                 <h5 className="text-sm font-bold text-dark-brown mb-2">{s.title}</h5>
                                 <p className="text-xs text-muted leading-relaxed">

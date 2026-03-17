@@ -22,6 +22,9 @@ const devanagari = Noto_Sans_Devanagari({
 export const metadata: Metadata = {
   title: "Laxmi Flour Mill | Premium Fresh Chakki Atta",
   description: "Experience the purity of fresh, stone-ground flour and artisanal grains from Laxmi Flour Mill. Milled daily for unmatched taste and nutrition.",
+  other: {
+    google: "notranslate",
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" translate="no" className="notranslate">
       <body
         className={`${playfair.variable} ${inter.variable} ${devanagari.variable} antialiased selection:bg-wheat/30`}
       >
