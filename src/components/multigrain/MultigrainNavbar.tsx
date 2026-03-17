@@ -5,7 +5,13 @@ import { ShoppingBasket, Menu, X, Phone, ArrowLeft, Globe } from "lucide-react";
 import Link from "next/link";
 import { useLanguage, Language } from "@/i18n/LanguageContext";
 
-const SECTION_KEYS = ["grains", "blends", "benefits", "process", "faq"] as const;
+const SECTION_LINKS = [
+    { id: "grains", labelKey: "grains" as keyof typeof import('@/i18n/dictionaries/en').en.nav },
+    { id: "custom-blends", labelKey: "customBlends" as keyof typeof import('@/i18n/dictionaries/en').en.nav },
+    { id: "health-issues", labelKey: "healthIssues" as keyof typeof import('@/i18n/dictionaries/en').en.nav, isAction: true },
+    { id: "process", labelKey: "process" as keyof typeof import('@/i18n/dictionaries/en').en.nav },
+    { id: "faq", labelKey: "faq" as keyof typeof import('@/i18n/dictionaries/en').en.nav },
+];
 
 export default function MultigrainNavbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +26,15 @@ export default function MultigrainNavbar() {
 
     const toggleLanguage = () => {
         setLanguage(language === "en" ? "hi" : "en");
+    };
+
+    const handleActionClick = (e: React.MouseEvent, link: typeof SECTION_LINKS[0]) => {
+        if (link.isAction) {
+            e.preventDefault();
+            if (link.id === "health-issues") {
+                window.dispatchEvent(new Event('openHealthIssuesModal'));
+            }
+        }
     };
 
     return (
@@ -48,13 +63,14 @@ export default function MultigrainNavbar() {
                         {t.nav.home}
                     </Link>
                     <span className="w-px h-5 bg-wheat/20" />
-                    {SECTION_KEYS.map((key) => (
+                    {SECTION_LINKS.map((link) => (
                         <a
-                            key={key}
-                            href={`#${key}`}
+                            key={link.id}
+                            href={`#${link.id}`}
+                            onClick={(e) => handleActionClick(e, link)}
                             className="text-xs font-medium text-dark-brown/60 hover:text-accent-green transition-colors uppercase tracking-widest"
                         >
-                            {t.nav[key]}
+                            {t.nav[link.labelKey as keyof typeof t.nav]}
                         </a>
                     ))}
                     
@@ -111,14 +127,17 @@ export default function MultigrainNavbar() {
                         </Link>
                     </li>
                     <hr className="border-wheat/20" />
-                    {SECTION_KEYS.map((key) => (
-                        <li key={key}>
+                    {SECTION_LINKS.map((link) => (
+                        <li key={link.id}>
                             <a
-                                href={`#${key}`}
-                                onClick={() => setIsOpen(false)}
+                                href={`#${link.id}`}
+                                onClick={(e) => {
+                                    setIsOpen(false);
+                                    handleActionClick(e, link);
+                                }}
                                 className="text-base font-medium text-dark-brown/70 hover:text-accent-green transition-colors uppercase tracking-widest"
                             >
-                                {t.nav[key]}
+                                {t.nav[link.labelKey as keyof typeof t.nav]}
                             </a>
                         </li>
                     ))}

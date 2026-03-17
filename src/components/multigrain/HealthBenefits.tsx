@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import HealthIssuesModal from "./HealthIssuesModal";
 const benefits = [
@@ -52,6 +52,12 @@ export default function HealthBenefits() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const headerReveal = useReveal();
     const gridReveal = useReveal();
+
+    useEffect(() => {
+        const handleOpenModal = () => setIsModalOpen(true);
+        window.addEventListener('openHealthIssuesModal', handleOpenModal);
+        return () => window.removeEventListener('openHealthIssuesModal', handleOpenModal);
+    }, []);
 
     return (
         <section id="benefits" className="max-w-7xl mx-auto px-6 py-28">

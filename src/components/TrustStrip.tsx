@@ -7,7 +7,7 @@ const items = [
     { icon: "⚙️", text: "Live Stone Grinding" },
     { icon: "🧪", text: "Chemical-Free" },
     { icon: "🏡", text: "Local Family Store" },
-    { icon: "🚚", text: "Same-Day Delivery" },
+    { icon: "🛍️", text: "Store Pickup" },
 ];
 
 export default function TrustStrip() {

@@ -1,4 +1,4 @@
-import { ShoppingBasket, Instagram, Facebook, MapPin, Mail, Phone } from "lucide-react";
+import { ShoppingBasket, MapPin, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -18,14 +18,6 @@ export default function Footer() {
                         Reviving the tradition of fresh, stone-ground flour for modern homes.
                         Pure, nutritious, and delivered with love from our family to yours.
                     </p>
-                    <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 bg-wheat/10 rounded-full flex items-center justify-center text-dark-brown hover:bg-accent-green hover:text-white transition-colors duration-300">
-                            <Instagram className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="w-10 h-10 bg-wheat/10 rounded-full flex items-center justify-center text-dark-brown hover:bg-accent-green hover:text-white transition-colors duration-300">
-                            <Facebook className="w-5 h-5" />
-                        </a>
-                    </div>
                 </div>
 
                 <div>

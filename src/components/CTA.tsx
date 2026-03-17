@@ -51,7 +51,7 @@ export default function CTA() {
                 </div>
 
                 <p className="text-white/40 text-xs uppercase tracking-[0.3em]">
-                    Same-Day Delivery Available in Selected Areas
+                    Freshly Milled for Store Pickup
                 </p>
             </div>
 

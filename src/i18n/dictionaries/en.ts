@@ -9,6 +9,8 @@ export const en = {
     contact: "Contact",
     callNow: "Call Now",
     backToHome: "Back to Home",
+    healthIssues: "Health Issues",
+    customBlends: "Custom Blends",
   },
   hero: {
     introducing: "Introducing",
@@ -45,7 +47,7 @@ export const en = {
     readyToStart: "Ready to Start?",
     yourCustomBlend: "Your Custom Blend",
     awaits: "Awaits.",
-    description: "Tell us your health goals, and we'll recommend the perfect blend. Order via WhatsApp or call us — we mill it fresh and deliver it the same day.",
+    description: "Tell us your health goals, and we'll recommend the perfect blend. Order via WhatsApp or call us — we mill it fresh for you to pick up.",
     orderOnWhatsapp: "Order on WhatsApp",
     callNow: "Call Now",
     comingSoon: "Coming Soon",

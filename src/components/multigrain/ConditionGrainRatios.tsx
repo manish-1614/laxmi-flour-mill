@@ -223,11 +223,12 @@ const CONDITIONS = [
 export default function ConditionGrainRatios() {
     const reveal = useReveal();
     const [activeIndex, setActiveIndex] = useState(0);
+    const [weightKg, setWeightKg] = useState<number | string>(1);
 
     const activeCondition = CONDITIONS[activeIndex];
 
     return (
-        <section className="bg-white/60 py-24 border-t border-wheat/10">
+        <section id="custom-blends" className="bg-white/60 py-24 border-t border-wheat/10">
             <div className="max-w-6xl mx-auto px-6">
                 <div
                     ref={reveal.ref}
@@ -300,27 +301,60 @@ export default function ConditionGrainRatios() {
                                 </div>
                             </div>
 
-                            {/* Grain Progress Bars */}
-                            <div className="space-y-4 mb-8 flex-1">
-                                <p className="text-xs font-bold text-dark-brown uppercase tracking-wider mb-2">
-                                    Grain Composition
-                                </p>
-                                {activeCondition.grains.map((g) => (
-                                    <div key={g.name} className="flex items-center gap-4">
-                                        <span className="text-xs text-muted w-32 shrink-0 font-medium">
-                                            {g.name}
-                                        </span>
-                                        <div className="flex-1 h-3 bg-white rounded-full overflow-hidden border border-wheat/10">
-                                            <div
-                                                className={`h-full rounded-full transition-all duration-700 ease-out ${g.color}`}
-                                                style={{ width: `${g.pct}%` }}
-                                            />
-                                        </div>
-                                        <span className="text-xs font-bold text-dark-brown w-10 text-right shrink-0">
-                                            {g.pct}%
-                                        </span>
+                            {/* Grain Composition Table */}
+                            <div className="mb-8 flex-1">
+                                <div className="flex items-center justify-between mb-4">
+                                    <p className="text-xs font-bold text-dark-brown uppercase tracking-wider">
+                                        Grain Composition
+                                    </p>
+                                    <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-wheat/20 shadow-sm">
+                                        <label htmlFor="weight" className="text-xs font-semibold text-muted">
+                                            Total Wt (kg):
+                                        </label>
+                                        <input
+                                            id="weight"
+                                            type="number"
+                                            min="0.1"
+                                            step="0.1"
+                                            value={weightKg}
+                                            onChange={(e) => setWeightKg(e.target.value)}
+                                            className="w-16 text-sm font-bold text-dark-brown outline-none bg-transparent"
+                                        />
                                     </div>
-                                ))}
+                                </div>
+                                <div className="bg-white rounded-xl border border-wheat/10 overflow-hidden text-sm">
+                                    <table className="w-full text-left">
+                                        <thead className="bg-wheat/10">
+                                            <tr>
+                                                <th className="px-4 py-3 font-semibold text-dark-brown">Grain</th>
+                                                <th className="px-4 py-3 font-semibold text-dark-brown text-center">%</th>
+                                                <th className="px-4 py-3 font-semibold text-dark-brown text-right">Weight (g)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-wheat/5">
+                                            {activeCondition.grains.map((g) => {
+                                                const weightInGrams =
+                                                    (Number(weightKg) || 0) * 1000 * (g.pct / 100);
+                                                return (
+                                                    <tr key={g.name} className="hover:bg-wheat/5 transition-colors">
+                                                        <td className="px-4 py-3 text-muted font-medium">
+                                                            <div className="flex items-center gap-2">
+                                                                <div className={`w-2 h-2 rounded-full ${g.color}`} />
+                                                                {g.name}
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-4 py-3 text-dark-brown font-bold text-center border-l border-wheat/5">
+                                                            {g.pct}%
+                                                        </td>
+                                                        <td className="px-4 py-3 text-accent-green font-bold text-right border-l border-wheat/5">
+                                                            {weightInGrams > 0 ? weightInGrams.toFixed(0) : 0} g
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                             {/* Avoid Section */}

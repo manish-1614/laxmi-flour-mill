@@ -14,7 +14,6 @@ export default function Navbar() {
         { name: t.mainNav.home, href: "#", highlight: false },
         { name: t.mainNav.ourProcess, href: "#process", highlight: false },
         { name: t.mainNav.products, href: "#products", highlight: false },
-        { name: t.mainNav.testimonials, href: "#testimonials", highlight: false },
         { name: t.mainNav.multigrainAtta, href: "/multigrain", highlight: true },
     ];
 
