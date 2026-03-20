@@ -28,7 +28,7 @@ const translations: Record<string, Translation> = {
         facts: [
             { icon: Clock, value: "Same Day", label: "Milled Fresh", detail: "No warehouse stock" },
             { icon: Wind, value: "10–15 Days", label: "Unpackaged", detail: "Use quickly for best taste" },
-            { icon: Package, value: "2–4 Months", label: "Vacuum-Packed", detail: "Airtight sealed pouch" },
+            { icon: Package, value: "4–8 Weeks", label: "Vacuum-Packed", detail: "Airtight sealed pouch (seed‑enhanced blends 4–6 weeks)" },
             { icon: Snowflake, value: "5–6 Months", label: "Refrigerated", detail: "For maximum freshness" },
         ]
     },
@@ -40,7 +40,7 @@ const translations: Record<string, Translation> = {
         facts: [
             { icon: Clock, value: "उसी दिन", label: "ताज़ा पिसा", detail: "कोई गोदाम स्टॉक नहीं" },
             { icon: Wind, value: "10–15 दिन", label: "खुला हुआ", detail: "बेहतरीन स्वाद के लिए जल्दी इस्तेमाल करें" },
-            { icon: Package, value: "2–4 महीने", label: "वैक्यूम-पैक्ड", detail: "हवा-बन्द सीलबंद पाउच" },
+            { icon: Package, value: "4–8 सप्ताह", label: "वैक्यूम-पैक्ड", detail: "हवा-बन्द सीलबंद पाउच (बीज वाले ब्लेंड के लिए 4–6 सप्ताह)" },
             { icon: Snowflake, value: "5–6 महीने", label: "फ्रिज में", detail: "अधिकतम ताजगी के लिए" },
         ]
     }

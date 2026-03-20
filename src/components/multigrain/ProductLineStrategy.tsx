@@ -116,7 +116,7 @@ const PORTFOLIO = {
             grains: "Wheat 40%, Chickpea 20%, Moong dal 15%, Quinoa 15%, Soy flour 10%",
             price: "₹110–135",
             sizes: "500g / 1kg",
-            insight: "18–22g protein/100g. Targets India's growing fitness & gym market.",
+            insight: "17–20g protein/100g. Targets India's growing fitness & gym market.",
             channel: "Gyms, yoga centers, sports nutrition influencers, D2C online.",
         },
         {

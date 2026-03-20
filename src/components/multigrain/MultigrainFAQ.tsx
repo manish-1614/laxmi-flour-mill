@@ -27,7 +27,7 @@ const translations: Record<string, Translation> = {
         faqs: [
             {
                 question: "How long does multigrain atta last?",
-                answer: "Freshly milled atta is best consumed within 10–15 days when stored unpackaged. In vacuum-sealed packaging, it stays fresh for 2–4 months. Refrigerated in an airtight container, shelf life extends to 5–6 months. Seed-enhanced blends (flax, chia) should be consumed sooner as omega-3 oils oxidise faster — ideally within 1–1.5 months even when vacuum-packed.",
+                answer: "Freshly milled atta is best consumed within 10–15 days when stored unpackaged. In vacuum-sealed packaging, it stays fresh for 4–8 weeks. Refrigerated in an airtight container, shelf life extends to 5–6 months. Seed-enhanced blends (flax, chia) have a shorter shelf life of 4–6 weeks even when vacuum-packed, as omega-3 oils oxidise faster.",
             },
             {
                 question: "How should I knead multigrain atta?",
@@ -39,11 +39,11 @@ const translations: Record<string, Translation> = {
             },
             {
                 question: "Who should avoid certain grains?",
-                answer: "Celiac patients should avoid all wheat, barley, and oat-based blends — choose our Ancient Grains (gluten-free) blend instead. Kidney stone patients should limit ragi due to its oxalic acid content. Thyroid patients should avoid soy-heavy blends. Pregnant women should avoid excess fenugreek (methi) in early pregnancy. Those on blood thinners (Warfarin) should be cautious with high flaxseed/chia blends due to their mild anticoagulant effect. Always consult your doctor.",
+                answer: "Diagnosis-specific avoidance is crucial: Celiac patients should avoid all wheat, barley, and oat-based blends — our Ancient Grains blend is milled on shared equipment and is suitable for gluten sensitivity but not certified for diagnosed celiac disease. Gout patients should limit chickpea-heavy blends (Fitness). Thyroid patients should avoid soy-heavy blends. Pregnant women should avoid products with fenugreek (Diabetic, Functional Health) as it may stimulate uterine contractions. Those on blood thinners (Warfarin) should avoid high flaxseed/chia blends. Always consult your doctor.",
             },
             {
                 question: "Do you offer gluten-free options?",
-                answer: "Yes. Our Ancient Grains Blend is 100% wheat-free and gluten-free, made with jowar (30%), bajra (25%), ragi (25%), and foxtail millet (20%). It is suitable for individuals with celiac disease or gluten sensitivity. We mill gluten-free blends separately to minimise cross-contamination risk.",
+                answer: "Our Ancient Grains Blend is 100% wheat-free, made with jowar (30%), bajra (25%), ragi (25%), and foxtail millet (20%). It is suitable for gluten-sensitive individuals. Note: Milled on shared equipment — not certified gluten-free under Codex Alimentarius (<20ppm) for diagnosed celiac disease.",
             },
             {
                 question: "Can I customize my own grain blend?",
@@ -59,7 +59,7 @@ const translations: Record<string, Translation> = {
         faqs: [
             {
                 question: "मल्टीग्रेन आटा कितने समय तक चलता है?",
-                answer: "बिना पैकेट के स्टोर किए जाने पर ताज़ा पिसा हुआ आटा 10-15 दिनों के भीतर खा लेना सबसे अच्छा है। वैक्यूम-सीलबंद पैकेजिंग में, यह 2-4 महीने तक ताज़ा रहता है। एयरटाइट डिब्बे में फ्रिज में रखने पर यह 5-6 महीने तक चलता है। बीजों वाले ब्लेंड (अलसी, चिया) को जल्दी खा लेना चाहिए क्योंकि ओमेगा-3 तेल तेज़ी से ऑक्सीकृत होते हैं — वैक्यूम-पैक होने पर भी 1-1.5 महीने के भीतर।",
+                answer: "बिना पैकेट के स्टोर किए जाने पर ताज़ा पिसा हुआ आटा 10-15 दिनों के भीतर खा लेना सबसे अच्छा है। वैक्यूम-सीलबंद पैकेजिंग में, यह 4-8 सप्ताह तक ताज़ा रहता है। एयरटाइट डिब्बे में फ्रिज में रखने पर यह 5-6 महीने तक चलता है। बीजों वाले ब्लेंड (अलसी, चिया) की शेल्फ लाइफ कम (4-6 सप्ताह) होती है क्योंकि ओमेगा-3 तेल तेज़ी से ऑक्सीकृत होते हैं।",
             },
             {
                 question: "मुझे मल्टीग्रेन आटा कैसे गूंधना चाहिए?",
@@ -71,11 +71,11 @@ const translations: Record<string, Translation> = {
             },
             {
                 question: "किन लोगों को कुछ अनाज से बचना चाहिए?",
-                answer: "सीलिएक रोगियों को सभी गेहूं, जौ और जई-आधारित ब्लेंड से बचना चाहिए — इसके बजाय हमारे प्राचीन अनाज (ग्लूटेन-मुक्त) ब्लेंड को चुनें। गुर्दे की पथरी के रोगियों को रागी को सीमित करना चाहिए। थायराइड के रोगियों को सोया-भारी ब्लेंड से बचना चाहिए। गर्भवती महिलाओं को गर्भावस्था के शुरुआती दिनों में अतिरिक्त मेथी से बचना चाहिए। हमेशा अपने डॉक्टर से सलाह लें।",
+                answer: "विशिष्ट परहेज महत्वपूर्ण है: सीलिएक रोगियों को सभी गेहूं, जौ और जई-आधारित ब्लेंड से बचना चाहिए — हमारा प्राचीन अनाज ब्लेंड साझा उपकरणों पर पिसा जाता है और ग्लूटेन-संवेदनशीलता के लिए उपयुक्त है लेकिन प्रमाणित सीलिएक-मुक्त नहीं है। गाउट रोगियों को चने वाले ब्लेंड (फिटनेस) को सीमित करना चाहिए। थायराइड रोगियों को सोया-भारी ब्लेंड से बचना चाहिए। गर्भवती महिलाओं को मेथी वाले उत्पादों (मधुमेह, फंक्शनल हेल्थ) से बचना चाहिए क्योंकि यह गर्भाशय संकुचन को उत्तेजित कर सकता है। रक्त पतला करने वाली दवाएं लेने वालों को अलसी/चिया ब्लेंड से बचना चाहिए।",
             },
             {
                 question: "क्या आप ग्लूटेन-मुक्त विकल्प प्रदान करते हैं?",
-                answer: "हाँ। हमारा प्राचीन अनाज ब्लेंड 100% गेहूं-मुक्त और ग्लूटेन-मुक्त है, जो ज्वार (30%), बाजरा (25%), रागी (25%), और कंगनी (20%) से बना है। यह सीलिएक रोग वाले व्यक्तियों के लिए भी उपयुक्त है।",
+                answer: "हमारा प्राचीन अनाज ब्लेंड 100% गेहूं-मुक्त है, जो ज्वार (30%), बाजरा (25%), रागी (25%), और कंगनी (20%) से बना है। यह ग्लूटेन-संवेदनशील व्यक्तियों के लिए उपयुक्त है। नोट: साझा उपकरणों पर पिसा हुआ — सीलिएक रोग के लिए प्रमाणित ग्लूटेन-मुक्त नहीं।",
             },
             {
                 question: "क्या मैं अपना खुद का अनाज ब्लेंड बना सकता हूँ?",

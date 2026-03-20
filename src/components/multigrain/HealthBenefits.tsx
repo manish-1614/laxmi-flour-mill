@@ -35,7 +35,7 @@ const translations: Record<string, Translation> = {
                 emoji: "🩺",
                 tag: "Low GI",
                 title: "Diabetic-Friendly",
-                description: "Lowers post-meal blood glucose spikes by 25–40%. Barley's beta-glucan slows glucose absorption, and fenugreek's 4-hydroxyisoleucine naturally stimulates insulin secretion.",
+                description: "Lowers post-meal blood glucose spikes by 25–40%. Barley's beta-glucan slows glucose absorption, and fenugreek's 4-hydroxyisoleucine naturally stimulates insulin secretion. Pregnancy warning: fenugreek may stimulate uterine contractions.",
             },
             {
                 emoji: "❤️",
@@ -81,7 +81,7 @@ const translations: Record<string, Translation> = {
                 emoji: "🩺",
                 tag: "कम GI",
                 title: "मधुमेह के अनुकूल",
-                description: "भोजन के बाद रक्त शर्करा में वृद्धि को 25-40% तक कम करता है। जौ का बीटा-ग्लूकेन ग्लूकोज अवशोषण को धीमा कर देता है, और मेथी का 4-हाइड्रॉक्सीआइसोल्यूसीन स्वाभाविक रूप से इंसुलिन स्राव को उत्तेजित करता है।",
+                description: "भोजन के बाद रक्त शर्करा में वृद्धि को 25-40% तक कम करता है। जौ का बीटा-ग्लूकेन ग्लूकोज अवशोषण को धीमा कर देता है, और मेथी का 4-हाइड्रॉक्सीआइसोल्यूसीन स्वाभाविक रूप से इंसुलिन स्राव को उत्तेजित करता है। गर्भावस्था चेतावनी: मेथी गर्भाशय संकुचन को उत्तेजित कर सकती है।",
             },
             {
                 emoji: "❤️",
